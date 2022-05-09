@@ -1,5 +1,3 @@
-import 'dart:io';
-
 void main(List<String> args) {
     var input = 	[
 			  ["001", "Akhmal Dimas", "Sleman", "Gaming"],
