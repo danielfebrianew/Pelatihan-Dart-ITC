@@ -53,8 +53,9 @@ class _loginPageState extends State<loginPage> {
                 decoration: InputDecoration(
                   icon: const Icon(Icons.person),
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      borderSide: const BorderSide(width: 0)),
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(width: 0),
+                  ),
                   filled: false,
                   hintText: 'Username',
                   contentPadding: const EdgeInsets.all(15),
@@ -68,8 +69,9 @@ class _loginPageState extends State<loginPage> {
                 decoration: InputDecoration(
                   icon: const Icon(Icons.key),
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      borderSide: const BorderSide(width: 0)),
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(width: 0),
+                  ),
                   filled: false,
                   hintText: 'Password',
                   contentPadding: const EdgeInsets.all(15),
@@ -80,39 +82,58 @@ class _loginPageState extends State<loginPage> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    primary: Colors.green,
-                    onPrimary: Colors.white,
-                    shadowColor: Colors.greenAccent,
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    minimumSize: const Size(90, 40)),
+                  primary: Colors.green,
+                  onPrimary: Colors.white,
+                  shadowColor: Colors.greenAccent,
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  minimumSize: const Size(90, 40),
+                ),
                 child: const Text(
                   'Login',
                   style: TextStyle(fontSize: 18),
                 ),
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const homePage()));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const homePage(),
+                    ),
+                  );
                 },
               ),
               const SizedBox(
-                height: 50,
+                height: 30,
               ),
-              const Text(
-                'Belum punya akun?',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const registrationPage()));
-                },
-                child: const Text('Daftar'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Belum punya akun?',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const registrationPage(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      'Daftar',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  )
+                ],
               )
             ],
           ),

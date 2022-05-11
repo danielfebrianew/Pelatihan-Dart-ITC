@@ -121,22 +121,33 @@ class _registrationPageState extends State<registrationPage> {
                 },
               ),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
-              const Text(
-                'Sudah memiliki akun?',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const loginPage(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Sudah memiliki akun?',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const loginPage(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
-                  );
-                },
-                child: const Text('Login'),
+                  )
+                ],
               )
             ],
           ),
