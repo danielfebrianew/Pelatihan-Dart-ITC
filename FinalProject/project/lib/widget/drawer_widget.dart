@@ -24,7 +24,8 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
         color: Colors.black,
         child: ListView(
           children: <Widget>[
-            const SizedBox(height: 48),
+            buildHeader(),
+            const SizedBox(height: 35),
             buildMenuItem(
               text: 'Friends',
               icon: Icons.people_alt_rounded,
@@ -86,6 +87,8 @@ Widget buildMenuItem(
 }
 
 void selectedItem(BuildContext context, int index) {
+  Navigator.of(context).pop();
+
   switch (index) {
     case 0:
       Navigator.of(context).push(
@@ -138,3 +141,33 @@ void selectedItem(BuildContext context, int index) {
       break;
   }
 }
+
+Widget buildHeader() => InkWell(
+      child: Container(
+        padding: const EdgeInsets.only(top: 30),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            CircleAvatar(
+              radius: 75,
+              backgroundImage: AssetImage(
+                'images/user.jpg',
+              ),
+            ),
+            SizedBox(height: 40),
+            Text(
+              'Daniel Febrian E.W.',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 5),
+            Text(
+              'danielfebrian61@gmail.com',
+              style: TextStyle(color: Colors.grey, fontSize: 14),
+            ),
+          ],
+        ),
+      ),
+    );
