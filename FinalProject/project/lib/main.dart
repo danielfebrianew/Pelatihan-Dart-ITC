@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project/pages/homepage.dart';
 import 'package:project/colors/colors.dart';
+import 'package:project/pages/beginningpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: primaryBlack,
       ),
-      home: const homepage(),
+      home: const beginningPage(),
     );
   }
 }

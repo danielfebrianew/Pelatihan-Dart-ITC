@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project/pages/beginningpage.dart';
 import 'package:project/pages/bookmarkpage.dart';
-import 'package:project/pages/challengepage.dart';
 import 'package:project/pages/friendspage.dart';
 import 'package:project/pages/historypage.dart';
 import 'package:project/pages/notificationpage.dart';
@@ -46,22 +46,22 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
               icon: Icons.bookmark,
               onClicked: () => selectedItem(context, 3),
             ),
+            buildMenuItem(
+              text: 'History',
+              icon: Icons.history,
+              onClicked: () => selectedItem(context, 4),
+            ),
             const SizedBox(height: 24),
             const Divider(color: Colors.white70),
             const SizedBox(height: 24),
             buildMenuItem(
-              text: 'Reading Challenge',
-              icon: Icons.military_tech_outlined,
-              onClicked: () => selectedItem(context, 4),
-            ),
-            buildMenuItem(
-              text: 'History',
-              icon: Icons.history,
+              text: 'Settings',
+              icon: Icons.settings,
               onClicked: () => selectedItem(context, 5),
             ),
             buildMenuItem(
-              text: 'Settings',
-              icon: Icons.settings,
+              text: 'Logout',
+              icon: Icons.logout,
               onClicked: () => selectedItem(context, 6),
             ),
           ],
@@ -121,21 +121,21 @@ void selectedItem(BuildContext context, int index) {
     case 4:
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => const ChallengePage(),
+          builder: (context) => const HistoryPage(),
         ),
       );
       break;
     case 5:
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => const HistoryPage(),
+          builder: (context) => const SettingsPage(),
         ),
       );
       break;
     case 6:
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => const SettingsPage(),
+          builder: (context) => const beginningPage(),
         ),
       );
       break;
@@ -144,6 +144,7 @@ void selectedItem(BuildContext context, int index) {
 
 Widget buildHeader() => InkWell(
       child: Container(
+        // color: const Color.fromRGBO(255, 163, 26, 1),
         padding: const EdgeInsets.only(top: 30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -165,7 +166,10 @@ Widget buildHeader() => InkWell(
             SizedBox(height: 5),
             Text(
               'danielfebrian61@gmail.com',
-              style: TextStyle(color: Colors.grey, fontSize: 14),
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 14,
+              ),
             ),
           ],
         ),

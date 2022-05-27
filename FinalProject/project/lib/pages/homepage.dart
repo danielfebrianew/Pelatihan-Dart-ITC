@@ -22,7 +22,7 @@ class _homepageState extends State<homepage> {
   int _currentIndex = 0;
   List<Widget> pages = const [
     Text('home', style: _textStyle),
-    Text('shop', style: _textStyle),
+    Text('my books', style: _textStyle),
     Text('settings', style: _textStyle),
   ];
   @override
@@ -49,7 +49,10 @@ class _homepageState extends State<homepage> {
         actions: [
           IconButton(
             onPressed: () {
-              showSearch(context: context, delegate: CustomSearchDelegate());
+              showSearch(
+                context: context,
+                delegate: CustomSearchDelegate(),
+              );
             },
             icon: const Icon(Icons.search),
           ),
