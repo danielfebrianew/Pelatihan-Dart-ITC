@@ -73,13 +73,18 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
 
 Widget buildMenuItem(
     {required String text, required IconData icon, VoidCallback? onClicked}) {
-  const color = Colors.white;
+  const color = Color.fromRGBO(255, 163, 26, 1);
 
   return ListTile(
-    leading: Icon(icon, color: color),
+    leading: Icon(
+      icon,
+      color: color,
+    ),
     title: Text(
       text,
-      style: const TextStyle(color: color),
+      style: const TextStyle(
+        color: Colors.white,
+      ),
     ),
     hoverColor: Colors.white,
     onTap: onClicked,
@@ -145,17 +150,23 @@ void selectedItem(BuildContext context, int index) {
 Widget buildHeader() => InkWell(
       child: Container(
         // color: const Color.fromRGBO(255, 163, 26, 1),
-        padding: const EdgeInsets.only(top: 30),
+        padding: const EdgeInsets.only(
+          top: 10,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             CircleAvatar(
-              radius: 75,
-              backgroundImage: AssetImage(
-                'images/user.jpg',
+              radius: 80,
+              backgroundColor: Color.fromRGBO(255, 163, 26, 1),
+              child: CircleAvatar(
+                radius: 76,
+                backgroundImage: AssetImage(
+                  'images/user.jpg',
+                ),
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 30),
             Text(
               'Daniel Febrian E.W.',
               style: TextStyle(

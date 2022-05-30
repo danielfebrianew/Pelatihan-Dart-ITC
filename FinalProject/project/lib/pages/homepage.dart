@@ -15,6 +15,7 @@ const TextStyle _textStyle = TextStyle(
   fontWeight: FontWeight.bold,
   letterSpacing: 2,
   fontStyle: FontStyle.italic,
+  color: Color.fromRGBO(255, 163, 26, 1),
 );
 
 // ignore: camel_case_types
@@ -25,6 +26,7 @@ class _homepageState extends State<homepage> {
     Text('my books', style: _textStyle),
     Text('settings', style: _textStyle),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +38,7 @@ class _homepageState extends State<homepage> {
           width: 45,
           alignment: Alignment.center,
           // padding: const EdgeInsets.all(0),
-          margin: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+          margin: const EdgeInsets.fromLTRB(0, 55, 0, 0),
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
@@ -58,8 +60,12 @@ class _homepageState extends State<homepage> {
           ),
         ],
       ),
-      body: Center(
-        child: pages[_currentIndex],
+      body: SafeArea(
+        child: Container(
+          color: const Color.fromARGB(255, 14, 14, 14),
+          alignment: Alignment.center,
+          child: pages[_currentIndex],
+        ),
       ),
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
@@ -134,6 +140,7 @@ class CustomSearchDelegate extends SearchDelegate {
     "Gulliver's Travel",
     'Hujan',
   ];
+
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
@@ -169,7 +176,12 @@ class CustomSearchDelegate extends SearchDelegate {
         itemBuilder: (context, index) {
           var result = matchQuery[index];
           return ListTile(
-            title: Text(result),
+            title: Text(
+              result,
+              style: const TextStyle(
+                color: Colors.grey,
+              ),
+            ),
           );
         });
   }
@@ -187,9 +199,13 @@ class CustomSearchDelegate extends SearchDelegate {
         itemBuilder: (context, index) {
           var result = matchQuery[index];
           return ListTile(
-            title: Text(result),
+            title: Text(
+              result,
+              style: const TextStyle(
+                color: Colors.grey,
+              ),
+            ),
           );
         });
-    // throw UnimplementedError();
   }
 }
