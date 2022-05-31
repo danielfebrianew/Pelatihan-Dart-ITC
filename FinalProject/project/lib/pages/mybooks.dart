@@ -1,6 +1,4 @@
 // ignore_for_file: camel_case_types
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyBooksPage extends StatefulWidget {
@@ -11,25 +9,39 @@ class MyBooksPage extends StatefulWidget {
 }
 
 class _MyBooksPageState extends State<MyBooksPage> {
-  int boxWidth = 300;
-  int boxHeight = 90;
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 15,
-          ),
-          const Text(
-            "CURRENTLY READING :",
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
-          const SizedBox(
-            height: 10,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: const [
+              SizedBox(
+                height: 40,
+                width: 20,
+              ),
+              Text(
+                "READING : ",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'Roboto',
+                  // fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(
+                width: 278,
+              ),
+              Text(
+                "SEE ALL",
+                style: TextStyle(
+                  color: Color.fromRGBO(255, 163, 26, 1),
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -38,24 +50,86 @@ class _MyBooksPageState extends State<MyBooksPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const SizedBox(
-                  height: 100,
+                  height: 10,
                   width: 15,
                 ),
-                _firstBook(boxWidth, boxHeight),
+                _bookList(
+                    "Bumi Manusia", "Pramoedya Ananta Toer", "bumi-manusia"),
                 const SizedBox(
                   width: 20,
                 ),
-                _secondBook(boxWidth, boxHeight),
+                _bookList(
+                  "Seperti Dendam Rindu Harus Dibayar Tuntas",
+                  "Eka Kurniawan",
+                  "seperti-dendam",
+                ),
                 const SizedBox(
                   width: 20,
                 ),
-                _thirdBook(boxWidth, boxHeight),
+                _bookList(
+                  "Norwegian Wood",
+                  "Haruki Murakami",
+                  "norwegian-wood",
+                ),
                 const SizedBox(
                   width: 20,
                 ),
-                _fourthBook(),
-                const SizedBox(
-                  width: 20,
+              ],
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: const [
+              SizedBox(
+                height: 40,
+                width: 20,
+              ),
+              Text(
+                "READ : ",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'Roboto',
+                  // fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(
+                width: 300,
+              ),
+              Text(
+                "SEE ALL",
+                style: TextStyle(
+                  color: Color.fromRGBO(255, 163, 26, 1),
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                _readList(
+                  "Cantik Itu Luka",
+                  "Eka Kurniawan",
+                  "cantik-itu-luka",
+                ),
+                _readList(
+                  "Animal Farm",
+                  "George Orwell",
+                  "animal-farm",
+                ),
+                _readList(
+                  "Eragon",
+                  "Christopher Paolini",
+                  "eragon",
+                ),
+                _readList(
+                  "s",
+                  "Christopher Paolini",
+                  "eragon",
                 ),
               ],
             ),
@@ -65,162 +139,125 @@ class _MyBooksPageState extends State<MyBooksPage> {
     );
   }
 
-  Widget _firstBook(int boxWidth, int boxHeight) {
+  Widget _bookList(
+    String bookName,
+    String bookAuthor,
+    String imageName,
+  ) {
     return Container(
-      width: boxWidth.toDouble(),
-      height: boxHeight.toDouble(),
+      margin: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.all(5),
+      width: 300,
+      height: 90,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        // border: Border.all(
-        //   color: Colors.white,
-        // ),
         color: Colors.black,
+        boxShadow: const [
+          BoxShadow(
+              color: Color.fromARGB(104, 0, 0, 0),
+              // color: Colors.orange,
+              blurRadius: 3,
+              spreadRadius: 1,
+              offset: Offset(10, 7)),
+        ],
       ),
       alignment: Alignment.center,
       child: ListTile(
         enabled: true,
+        title: Text(
+          bookName,
+          style: const TextStyle(
+            color: Color.fromRGBO(255, 163, 26, 1),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        subtitle: Text(
+          "by " + bookAuthor,
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+        ),
         leading: ConstrainedBox(
           constraints: const BoxConstraints(
             minWidth: 60,
           ),
           child: Image.asset(
-            'images/bumi-manusia.jpg',
+            "images/" + imageName + ".jpg",
             fit: BoxFit.contain,
-          ),
-        ),
-        title: const Text(
-          "Bumi Manusia",
-          style: TextStyle(
-            color: Color.fromRGBO(255, 163, 26, 1),
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        subtitle: const Text(
-          "by Pramoedya Ananta Toer",
-          style: TextStyle(
-            color: Colors.white,
           ),
         ),
       ),
     );
   }
 
-  Widget _secondBook(int boxWidth, int boxHeight) {
+  Widget _readList(
+    String bookName,
+    String bookAuthor,
+    String imageName,
+  ) {
     return Container(
-      width: boxWidth.toDouble(),
-      height: boxHeight.toDouble(),
+      margin: const EdgeInsets.fromLTRB(15, 10, 10, 10),
+      width: 400,
+      height: 130,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        // border: Border.all(
-        //   color: Colors.white,
-        // ),
         color: Colors.black,
+        boxShadow: const [
+          BoxShadow(
+              color: Color.fromARGB(104, 0, 0, 0),
+              // color: Colors.orange,
+              blurRadius: 3,
+              spreadRadius: 1,
+              offset: Offset(10, 7)),
+        ],
       ),
       alignment: Alignment.center,
       child: ListTile(
         enabled: true,
+        title: Text(
+          bookName,
+          style: const TextStyle(
+            color: Color.fromRGBO(255, 163, 26, 1),
+            fontWeight: FontWeight.bold,
+            fontSize: 23,
+          ),
+        ),
+        subtitle: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              "by " + bookAuthor,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 12,
+              ),
+            ),
+            // const Icon(Icons.star_border, color: Colors.white),
+            // const Icon(Icons.star_border, color: Colors.white),
+            // const Icon(Icons.star_border, color: Colors.white),
+            // const Icon(Icons.star_border, color: Colors.white),
+            // const Icon(Icons.star_border, color: Colors.white),
+          ],
+        ),
         leading: ConstrainedBox(
           constraints: const BoxConstraints(
             minWidth: 60,
           ),
           child: Image.asset(
-            'images/seperti-dendam.jpg',
+            "images/" + imageName + ".jpg",
             fit: BoxFit.contain,
           ),
         ),
-        title: const Text(
-          "Seperti Dendam Rindu Harus Dibayar Tuntas",
-          style: TextStyle(
-            color: Color.fromRGBO(255, 163, 26, 1),
-            fontWeight: FontWeight.bold,
+        trailing: SizedBox.fromSize(
+          size: const Size.fromRadius(20),
+          child: const FittedBox(
+            child: Icon(
+              Icons.add_circle_rounded,
+              color: Color.fromRGBO(255, 163, 26, 1),
+            ),
           ),
         ),
-        subtitle: const Text(
-          "by Eka Kurniawan",
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _thirdBook(int boxWidth, int boxHeight) {
-    return Container(
-      width: boxWidth.toDouble(),
-      height: boxHeight.toDouble(),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        // border: Border.all(
-        //   color: Colors.white,
-        // ),
-        color: Colors.black,
-      ),
-      alignment: Alignment.center,
-      child: ListTile(
-        enabled: true,
-        leading: ConstrainedBox(
-          constraints: const BoxConstraints(
-            minWidth: 60,
-          ),
-          child: Image.asset(
-            'images/norwegian-wood.jpg',
-            fit: BoxFit.contain,
-          ),
-        ),
-        title: const Text(
-          "Norwegian Wood",
-          style: TextStyle(
-            color: Color.fromRGBO(255, 163, 26, 1),
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        subtitle: const Text(
-          "by Haruki Murakami",
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _fourthBook() {
-    return Container(
-      width: boxWidth.toDouble(),
-      height: boxHeight.toDouble(),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        // border: Border.all(
-        //   color: Colors.white,
-        // ),
-        color: Colors.black,
-      ),
-      alignment: Alignment.center,
-      child: ListTile(
-        enabled: true,
-        leading: ConstrainedBox(
-          constraints: const BoxConstraints(
-            minWidth: 60,
-          ),
-          child: Image.asset(
-            'images/cantik-itu-luka.jpg',
-            fit: BoxFit.contain,
-          ),
-        ),
-        title: const Text(
-          "Cantik Itu Luka",
-          style: TextStyle(
-            color: Color.fromRGBO(255, 163, 26, 1),
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        subtitle: const Text(
-          "by Eka Kurniawan",
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
+        isThreeLine: true,
       ),
     );
   }

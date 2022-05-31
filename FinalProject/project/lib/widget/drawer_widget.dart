@@ -160,9 +160,9 @@ Widget buildHeader() => InkWell(
               radius: 80,
               backgroundColor: Color.fromRGBO(255, 163, 26, 1),
               child: CircleAvatar(
-                radius: 76,
+                radius: 75,
                 backgroundImage: AssetImage(
-                  'images/user.jpg',
+                  'images/user.JPG',
                 ),
               ),
             ),

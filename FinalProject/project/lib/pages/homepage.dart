@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/pages/home.dart';
 import 'package:project/widget/drawer_widget.dart';
 import 'package:project/pages/mybooks.dart';
 
@@ -24,8 +25,9 @@ class _homepageState extends State<homepage> {
   int _currentIndex = 0;
 
   List<Widget> pages = const [
-    Text('home', style: _textStyle),
+    HomePage(),
     MyBooksPage(),
+    Text('shop', style: _textStyle),
     Text('settings', style: _textStyle),
   ];
 
@@ -42,15 +44,17 @@ class _homepageState extends State<homepage> {
   PreferredSizeWidget _appBar() {
     return AppBar(
       centerTitle: true,
-      flexibleSpace: Container(
-        height: 45,
-        width: 45,
-        alignment: Alignment.center,
-        margin: const EdgeInsets.fromLTRB(0, 55, 0, 0),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              'images/landscapeLogo.png',
+      flexibleSpace: SafeArea(
+        child: Container(
+          height: 45,
+          width: 45,
+          alignment: Alignment.center,
+          margin: const EdgeInsets.all(5),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                'images/landscapeLogo.png',
+              ),
             ),
           ),
         ),
@@ -107,14 +111,25 @@ class _homepageState extends State<homepage> {
           ),
           NavigationDestination(
             selectedIcon: Icon(
-              Icons.my_library_books_rounded,
+              Icons.auto_stories_rounded,
               color: Colors.black,
             ),
             icon: Icon(
-              Icons.my_library_books_outlined,
+              Icons.auto_stories_outlined,
               color: Color.fromRGBO(255, 163, 26, 1),
             ),
             label: 'My Books',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(
+              Icons.shopping_cart_sharp,
+              color: Colors.black,
+            ),
+            icon: Icon(
+              Icons.shopping_cart_outlined,
+              color: Color.fromRGBO(255, 163, 26, 1),
+            ),
+            label: 'Shop',
           ),
           NavigationDestination(
             selectedIcon: Icon(
