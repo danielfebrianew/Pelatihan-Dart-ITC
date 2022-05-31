@@ -13,6 +13,7 @@ class registrationPage extends StatefulWidget {
 
 // ignore: camel_case_types
 class _registrationPageState extends State<registrationPage> {
+  bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +30,7 @@ class _registrationPageState extends State<registrationPage> {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 40,
+                  height: 20,
                 ),
                 _textDaftar(),
                 const SizedBox(
@@ -152,7 +153,7 @@ class _registrationPageState extends State<registrationPage> {
         style: const TextStyle(
           color: Color.fromRGBO(255, 163, 26, 1),
         ),
-        obscureText: true,
+        obscureText: _obscureText,
         decoration: InputDecoration(
           icon: const Icon(
             Icons.key,
@@ -168,9 +169,18 @@ class _registrationPageState extends State<registrationPage> {
           filled: true,
           fillColor: const Color.fromARGB(255, 14, 14, 14),
           labelText: 'Password',
-          suffixIcon: const Icon(
-            Icons.remove_red_eye_sharp,
-            color: Color.fromRGBO(255, 163, 26, 1),
+          suffixIcon: GestureDetector(
+            onTap: () {
+              setState(
+                () {
+                  _obscureText = !_obscureText;
+                },
+              );
+            },
+            child: Icon(
+              _obscureText ? Icons.visibility_off : Icons.visibility,
+              color: const Color.fromRGBO(255, 163, 26, 1),
+            ),
           ),
           labelStyle: const TextStyle(
             color: Color.fromRGBO(255, 163, 26, 1),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/widget/drawer_widget.dart';
+import 'package:project/pages/mybooks.dart';
 
 // ignore: camel_case_types
 class homepage extends StatefulWidget {
@@ -21,9 +22,10 @@ const TextStyle _textStyle = TextStyle(
 // ignore: camel_case_types
 class _homepageState extends State<homepage> {
   int _currentIndex = 0;
+
   List<Widget> pages = const [
     Text('home', style: _textStyle),
-    Text('my books', style: _textStyle),
+    MyBooksPage(),
     Text('settings', style: _textStyle),
   ];
 
@@ -31,181 +33,102 @@ class _homepageState extends State<homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const NavigationDrawerWidget(),
-      appBar: AppBar(
-        centerTitle: true,
-        flexibleSpace: Container(
-          height: 45,
-          width: 45,
-          alignment: Alignment.center,
-          // padding: const EdgeInsets.all(0),
-          margin: const EdgeInsets.fromLTRB(0, 55, 0, 0),
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                'images/landscapeLogo.png',
-              ),
-              // fit: BoxFit.fitHeight,
+      appBar: _appBar(),
+      body: _mainBody(),
+      bottomNavigationBar: _bottomNavigationBar(),
+    );
+  }
+
+  PreferredSizeWidget _appBar() {
+    return AppBar(
+      centerTitle: true,
+      flexibleSpace: Container(
+        height: 45,
+        width: 45,
+        alignment: Alignment.center,
+        margin: const EdgeInsets.fromLTRB(0, 55, 0, 0),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              'images/landscapeLogo.png',
             ),
           ),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              showSearch(
-                context: context,
-                delegate: CustomSearchDelegate(),
-              );
-            },
-            icon: const Icon(Icons.search),
+      ),
+      actions: const [
+        Icon(Icons.notifications),
+      ],
+    );
+  }
+
+  Widget _mainBody() {
+    return SafeArea(
+      child: Container(
+        color: const Color.fromARGB(253, 27, 27, 27),
+        alignment: Alignment.topLeft,
+        child: pages[_currentIndex],
+      ),
+    );
+  }
+
+  Widget _bottomNavigationBar() {
+    return NavigationBarTheme(
+      data: NavigationBarThemeData(
+        indicatorColor: const Color.fromRGBO(255, 163, 26, 1),
+        labelTextStyle: MaterialStateProperty.all(
+          const TextStyle(
+            color: Color.fromRGBO(255, 163, 26, 1),
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      child: NavigationBar(
+        height: 90,
+        backgroundColor: Colors.black,
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+        selectedIndex: _currentIndex,
+        onDestinationSelected: (int newIndex) {
+          setState(() {
+            _currentIndex = newIndex;
+          });
+        },
+        destinations: const [
+          NavigationDestination(
+            selectedIcon: Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
+            icon: Icon(
+              Icons.home_outlined,
+              color: Color.fromRGBO(255, 163, 26, 1),
+            ),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(
+              Icons.my_library_books_rounded,
+              color: Colors.black,
+            ),
+            icon: Icon(
+              Icons.my_library_books_outlined,
+              color: Color.fromRGBO(255, 163, 26, 1),
+            ),
+            label: 'My Books',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(
+              Icons.settings,
+              color: Colors.black,
+            ),
+            icon: Icon(
+              Icons.settings_outlined,
+              color: Color.fromRGBO(255, 163, 26, 1),
+            ),
+            label: 'Settings',
           ),
         ],
       ),
-      body: SafeArea(
-        child: Container(
-          color: const Color.fromARGB(255, 14, 14, 14),
-          alignment: Alignment.center,
-          child: pages[_currentIndex],
-        ),
-      ),
-      bottomNavigationBar: NavigationBarTheme(
-        data: NavigationBarThemeData(
-          indicatorColor: const Color.fromRGBO(255, 163, 26, 1),
-          labelTextStyle: MaterialStateProperty.all(
-            const TextStyle(
-              color: Color.fromRGBO(255, 163, 26, 1),
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        child: NavigationBar(
-          height: 90,
-          backgroundColor: Colors.black,
-          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-          selectedIndex: _currentIndex,
-          onDestinationSelected: (int newIndex) {
-            setState(() {
-              _currentIndex = newIndex;
-            });
-          },
-          destinations: const [
-            NavigationDestination(
-              selectedIcon: Icon(
-                Icons.home,
-                color: Colors.black,
-              ),
-              icon: Icon(
-                Icons.home_outlined,
-                color: Color.fromRGBO(255, 163, 26, 1),
-              ),
-              label: 'Home',
-            ),
-            NavigationDestination(
-              selectedIcon: Icon(
-                Icons.my_library_books_rounded,
-                color: Colors.black,
-              ),
-              icon: Icon(
-                Icons.my_library_books_outlined,
-                color: Color.fromRGBO(255, 163, 26, 1),
-              ),
-              label: 'My Books',
-            ),
-            NavigationDestination(
-              selectedIcon: Icon(
-                Icons.settings,
-                color: Colors.black,
-              ),
-              icon: Icon(
-                Icons.settings_outlined,
-                color: Color.fromRGBO(255, 163, 26, 1),
-              ),
-              label: 'Settings',
-            ),
-          ],
-        ),
-      ),
     );
-  }
-}
-
-class CustomSearchDelegate extends SearchDelegate {
-  List<String> searchTerms = [
-    'Norwegian Wood',
-    'Bumi Manusia',
-    'Filosofi Teras',
-    'Laut Bercerita',
-    'Bumi',
-    'Dunia Sophie',
-    "Gulliver's Travel",
-    'Hujan',
-  ];
-
-  @override
-  List<Widget>? buildActions(BuildContext context) {
-    return [
-      IconButton(
-        onPressed: () {
-          query = '';
-        },
-        icon: const Icon(Icons.clear),
-      ),
-    ];
-  }
-
-  @override
-  Widget? buildLeading(BuildContext context) {
-    return IconButton(
-      onPressed: () {
-        close(context, null);
-      },
-      icon: const Icon(Icons.arrow_back),
-    );
-  }
-
-  @override
-  Widget buildResults(BuildContext context) {
-    List<String> matchQuery = [];
-    for (var book in searchTerms) {
-      if (book.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(book);
-      }
-    }
-    return ListView.builder(
-        itemCount: matchQuery.length,
-        itemBuilder: (context, index) {
-          var result = matchQuery[index];
-          return ListTile(
-            title: Text(
-              result,
-              style: const TextStyle(
-                color: Colors.grey,
-              ),
-            ),
-          );
-        });
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    List<String> matchQuery = [];
-    for (var book in searchTerms) {
-      if (book.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(book);
-      }
-    }
-    return ListView.builder(
-        itemCount: matchQuery.length,
-        itemBuilder: (context, index) {
-          var result = matchQuery[index];
-          return ListTile(
-            title: Text(
-              result,
-              style: const TextStyle(
-                color: Colors.grey,
-              ),
-            ),
-          );
-        });
   }
 }
