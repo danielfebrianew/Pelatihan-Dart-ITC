@@ -61,6 +61,9 @@ class _homepageState extends State<homepage> {
       ),
       actions: const [
         Icon(Icons.notifications),
+        SizedBox(
+          width: 15,
+        ),
       ],
     );
   }
