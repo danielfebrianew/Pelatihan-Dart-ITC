@@ -156,14 +156,10 @@ Widget buildHeader() => InkWell(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            CircleAvatar(
-              radius: 80,
-              backgroundColor: Color.fromRGBO(255, 163, 26, 1),
               child: CircleAvatar(
-                radius: 75,
+                radius: 60,
                 backgroundImage: AssetImage(
                   'images/user.JPG',
-                ),
               ),
             ),
             SizedBox(height: 30),
