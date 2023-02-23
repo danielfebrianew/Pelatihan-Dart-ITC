@@ -232,7 +232,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              "by " + bookAuthor,
+              "by $bookAuthor",
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 12,
@@ -245,7 +245,7 @@ class _HomePageState extends State<HomePage> {
             minWidth: 60,
           ),
           child: Image.asset(
-            "images/" + imageName + ".jpg",
+            "images/$imageName.jpg",
             fit: BoxFit.contain,
           ),
         ),
@@ -296,7 +296,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         subtitle: Text(
-          "by " + bookAuthor,
+          "by $bookAuthor",
           style: const TextStyle(
             color: Colors.white,
             fontSize: 12,
@@ -307,7 +307,7 @@ class _HomePageState extends State<HomePage> {
             minWidth: 60,
           ),
           child: Image.asset(
-            "images/" + imageName + ".jpg",
+            "images/$imageName.jpg",
             fit: BoxFit.contain,
           ),
         ),

@@ -1,6 +1,5 @@
 // ignore_for_file: camel_case_types
 import 'package:flutter/material.dart';
-import 'package:flutter/physics.dart';
 import 'package:project/widget/searchbar_widget.dart';
 
 class MyBooksPage extends StatefulWidget {
@@ -179,7 +178,7 @@ class _MyBooksPageState extends State<MyBooksPage> {
           ),
         ),
         subtitle: Text(
-          "by " + bookAuthor,
+          "by $bookAuthor",
           style: const TextStyle(
             color: Colors.white,
           ),
@@ -189,7 +188,7 @@ class _MyBooksPageState extends State<MyBooksPage> {
             minWidth: 60,
           ),
           child: Image.asset(
-            "images/" + imageName + ".jpg",
+            "images/$imageName.jpg",
             fit: BoxFit.contain,
           ),
         ),
@@ -229,7 +228,7 @@ class _MyBooksPageState extends State<MyBooksPage> {
               maxHeight: 155,
             ),
             child: Image.asset(
-              "images/" + imageName + ".jpg",
+              "images/$imageName.jpg",
               fit: BoxFit.fitHeight,
             ),
           ),
@@ -248,7 +247,7 @@ class _MyBooksPageState extends State<MyBooksPage> {
             height: 10,
           ),
           Text(
-            "by " + bookAuthor,
+            "by $bookAuthor",
             style: const TextStyle(
               color: Colors.white,
             ),

@@ -162,8 +162,7 @@ class _loginPageState extends State<loginPage> {
       alignment: Alignment.center,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: const Color.fromRGBO(255, 163, 26, 1),
-          onPrimary: Colors.black,
+          foregroundColor: Colors.black, backgroundColor: const Color.fromRGBO(255, 163, 26, 1),
           shadowColor: Colors.orangeAccent,
           elevation: 3,
           shape:

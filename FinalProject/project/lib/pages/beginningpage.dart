@@ -1,6 +1,3 @@
-import 'dart:ffi';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:project/colors/colors.dart';
 import 'package:project/pages/loginpage.dart';
@@ -46,8 +43,7 @@ class _beginningPageState extends State<beginningPage> {
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: const Color.fromRGBO(255, 163, 26, 1),
-                        onPrimary: primaryBlack,
+                        foregroundColor: primaryBlack, backgroundColor: const Color.fromRGBO(255, 163, 26, 1),
                         shadowColor: Colors.orangeAccent,
                         elevation: 3,
                         animationDuration: const Duration(milliseconds: 200),
@@ -76,8 +72,7 @@ class _beginningPageState extends State<beginningPage> {
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: const Color.fromRGBO(255, 163, 26, 1),
-                        onPrimary: primaryBlack,
+                        foregroundColor: primaryBlack, backgroundColor: const Color.fromRGBO(255, 163, 26, 1),
                         shadowColor: Colors.orangeAccent,
                         elevation: 3,
                         animationDuration: const Duration(milliseconds: 200),

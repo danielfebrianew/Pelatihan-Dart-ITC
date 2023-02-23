@@ -156,10 +156,10 @@ Widget buildHeader() => InkWell(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-              child: CircleAvatar(
-                radius: 60,
-                backgroundImage: AssetImage(
-                  'images/user.JPG',
+            CircleAvatar(
+              radius: 60,
+              backgroundImage: AssetImage(
+                'images/user.JPG',
               ),
             ),
             SizedBox(height: 30),

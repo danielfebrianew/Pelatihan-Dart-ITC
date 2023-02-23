@@ -196,8 +196,7 @@ class _registrationPageState extends State<registrationPage> {
       alignment: Alignment.center,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: const Color.fromRGBO(255, 163, 26, 1),
-          onPrimary: primaryBlack,
+          foregroundColor: primaryBlack, backgroundColor: const Color.fromRGBO(255, 163, 26, 1),
           shadowColor: Colors.orangeAccent,
           elevation: 3,
           shape: RoundedRectangleBorder(

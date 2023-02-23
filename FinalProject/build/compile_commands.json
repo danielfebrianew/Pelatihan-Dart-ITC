@@ -1,0 +1,74 @@
+[
+{
+  "directory": "C:/Users/asus/Documents/Dart/FinalProject/build/flutter",
+  "command": "C:\\MinGW\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_plugin.dir/includes_CXX.rsp -g -std=gnu++1z -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_plugin.dir\\ephemeral\\cpp_client_wrapper\\core_implementations.cc.obj -c C:\\Users\\asus\\Documents\\Dart\\FinalProject\\project\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\core_implementations.cc",
+  "file": "C:/Users/asus/Documents/Dart/FinalProject/project/windows/flutter/ephemeral/cpp_client_wrapper/core_implementations.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_plugin.dir/ephemeral/cpp_client_wrapper/core_implementations.cc.obj"
+},
+{
+  "directory": "C:/Users/asus/Documents/Dart/FinalProject/build/flutter",
+  "command": "C:\\MinGW\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_plugin.dir/includes_CXX.rsp -g -std=gnu++1z -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_plugin.dir\\ephemeral\\cpp_client_wrapper\\standard_codec.cc.obj -c C:\\Users\\asus\\Documents\\Dart\\FinalProject\\project\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\standard_codec.cc",
+  "file": "C:/Users/asus/Documents/Dart/FinalProject/project/windows/flutter/ephemeral/cpp_client_wrapper/standard_codec.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_plugin.dir/ephemeral/cpp_client_wrapper/standard_codec.cc.obj"
+},
+{
+  "directory": "C:/Users/asus/Documents/Dart/FinalProject/build/flutter",
+  "command": "C:\\MinGW\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_plugin.dir/includes_CXX.rsp -g -std=gnu++1z -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_plugin.dir\\ephemeral\\cpp_client_wrapper\\plugin_registrar.cc.obj -c C:\\Users\\asus\\Documents\\Dart\\FinalProject\\project\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\plugin_registrar.cc",
+  "file": "C:/Users/asus/Documents/Dart/FinalProject/project/windows/flutter/ephemeral/cpp_client_wrapper/plugin_registrar.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_plugin.dir/ephemeral/cpp_client_wrapper/plugin_registrar.cc.obj"
+},
+{
+  "directory": "C:/Users/asus/Documents/Dart/FinalProject/build/flutter",
+  "command": "C:\\MinGW\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_app.dir/includes_CXX.rsp -g -std=gnu++1z /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_app.dir\\ephemeral\\cpp_client_wrapper\\core_implementations.cc.obj -c C:\\Users\\asus\\Documents\\Dart\\FinalProject\\project\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\core_implementations.cc",
+  "file": "C:/Users/asus/Documents/Dart/FinalProject/project/windows/flutter/ephemeral/cpp_client_wrapper/core_implementations.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_app.dir/ephemeral/cpp_client_wrapper/core_implementations.cc.obj"
+},
+{
+  "directory": "C:/Users/asus/Documents/Dart/FinalProject/build/flutter",
+  "command": "C:\\MinGW\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_app.dir/includes_CXX.rsp -g -std=gnu++1z /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_app.dir\\ephemeral\\cpp_client_wrapper\\standard_codec.cc.obj -c C:\\Users\\asus\\Documents\\Dart\\FinalProject\\project\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\standard_codec.cc",
+  "file": "C:/Users/asus/Documents/Dart/FinalProject/project/windows/flutter/ephemeral/cpp_client_wrapper/standard_codec.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_app.dir/ephemeral/cpp_client_wrapper/standard_codec.cc.obj"
+},
+{
+  "directory": "C:/Users/asus/Documents/Dart/FinalProject/build/flutter",
+  "command": "C:\\MinGW\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_app.dir/includes_CXX.rsp -g -std=gnu++1z /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_app.dir\\ephemeral\\cpp_client_wrapper\\flutter_engine.cc.obj -c C:\\Users\\asus\\Documents\\Dart\\FinalProject\\project\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\flutter_engine.cc",
+  "file": "C:/Users/asus/Documents/Dart/FinalProject/project/windows/flutter/ephemeral/cpp_client_wrapper/flutter_engine.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_app.dir/ephemeral/cpp_client_wrapper/flutter_engine.cc.obj"
+},
+{
+  "directory": "C:/Users/asus/Documents/Dart/FinalProject/build/flutter",
+  "command": "C:\\MinGW\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_app.dir/includes_CXX.rsp -g -std=gnu++1z /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_app.dir\\ephemeral\\cpp_client_wrapper\\flutter_view_controller.cc.obj -c C:\\Users\\asus\\Documents\\Dart\\FinalProject\\project\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\flutter_view_controller.cc",
+  "file": "C:/Users/asus/Documents/Dart/FinalProject/project/windows/flutter/ephemeral/cpp_client_wrapper/flutter_view_controller.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_app.dir/ephemeral/cpp_client_wrapper/flutter_view_controller.cc.obj"
+},
+{
+  "directory": "C:/Users/asus/Documents/Dart/FinalProject/build/runner",
+  "command": "C:\\MinGW\\bin\\g++.exe -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/project.dir/includes_CXX.rsp -g -std=gnu++1z /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\project.dir\\flutter_window.cpp.obj -c C:\\Users\\asus\\Documents\\Dart\\FinalProject\\project\\windows\\runner\\flutter_window.cpp",
+  "file": "C:/Users/asus/Documents/Dart/FinalProject/project/windows/runner/flutter_window.cpp",
+  "output": "runner/CMakeFiles/project.dir/flutter_window.cpp.obj"
+},
+{
+  "directory": "C:/Users/asus/Documents/Dart/FinalProject/build/runner",
+  "command": "C:\\MinGW\\bin\\g++.exe -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/project.dir/includes_CXX.rsp -g -std=gnu++1z /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\project.dir\\main.cpp.obj -c C:\\Users\\asus\\Documents\\Dart\\FinalProject\\project\\windows\\runner\\main.cpp",
+  "file": "C:/Users/asus/Documents/Dart/FinalProject/project/windows/runner/main.cpp",
+  "output": "runner/CMakeFiles/project.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/asus/Documents/Dart/FinalProject/build/runner",
+  "command": "C:\\MinGW\\bin\\g++.exe -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/project.dir/includes_CXX.rsp -g -std=gnu++1z /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\project.dir\\utils.cpp.obj -c C:\\Users\\asus\\Documents\\Dart\\FinalProject\\project\\windows\\runner\\utils.cpp",
+  "file": "C:/Users/asus/Documents/Dart/FinalProject/project/windows/runner/utils.cpp",
+  "output": "runner/CMakeFiles/project.dir/utils.cpp.obj"
+},
+{
+  "directory": "C:/Users/asus/Documents/Dart/FinalProject/build/runner",
+  "command": "C:\\MinGW\\bin\\g++.exe -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/project.dir/includes_CXX.rsp -g -std=gnu++1z /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\project.dir\\win32_window.cpp.obj -c C:\\Users\\asus\\Documents\\Dart\\FinalProject\\project\\windows\\runner\\win32_window.cpp",
+  "file": "C:/Users/asus/Documents/Dart/FinalProject/project/windows/runner/win32_window.cpp",
+  "output": "runner/CMakeFiles/project.dir/win32_window.cpp.obj"
+},
+{
+  "directory": "C:/Users/asus/Documents/Dart/FinalProject/build/runner",
+  "command": "C:\\MinGW\\bin\\g++.exe -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/project.dir/includes_CXX.rsp -g -std=gnu++1z /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\project.dir\\__\\flutter\\generated_plugin_registrant.cc.obj -c C:\\Users\\asus\\Documents\\Dart\\FinalProject\\project\\windows\\flutter\\generated_plugin_registrant.cc",
+  "file": "C:/Users/asus/Documents/Dart/FinalProject/project/windows/flutter/generated_plugin_registrant.cc",
+  "output": "runner/CMakeFiles/project.dir/__/flutter/generated_plugin_registrant.cc.obj"
+}
+]
